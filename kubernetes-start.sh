@@ -19,6 +19,7 @@ cd Kubernetes
 minikube kubectl -- apply -f configmap.yml 
 minikube kubectl -- apply -f deployment.yml
 minikube kubectl -- apply -f issuer.yml
+minikube kubectl -- apply -f ciservice.yml
 #minikube kubectl -- apply -f ingress.yml
 envsubst < ingress.yml | minikube kubectl -- apply -f -
 
@@ -26,6 +27,7 @@ envsubst < ingress.yml | minikube kubectl -- apply -f -
 #kubectl apply -f configmap.yml
 #kubectl apply -f deployment.yml
 #kubectl apply -f issuer.yml
+#kubectl apply -f ciservice.yml
 #envsubst < ingress.yml | kubectl apply -f -
 
 
