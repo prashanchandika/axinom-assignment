@@ -5,9 +5,10 @@ metadata:
   name: my-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: axinom.assignment
+  - host: ${URL}
     http:
       paths:
       - path: /
@@ -17,3 +18,6 @@ spec:
             name: my-clusterip-service
             port:
               number: 8001
+  tls: 
+    - hosts: 
+        - ${URL}
