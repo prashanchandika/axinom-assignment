@@ -26,7 +26,7 @@ envsubst < ingress.yml | minikube kubectl -- apply -f -
 #kubectl apply -f configmap.yml
 #kubectl apply -f deployment.yml
 #kubectl apply -f issuer.yml
-#kubectl apply -f ingress.yml
+#envsubst < ingress.yml | kubectl apply -f -
 
 
 if [ $? -eq 0  ]
