@@ -1,0 +1,148 @@
+== Axinom Assignment
+
+=== Docker Setup
+
+Docker setup contains of three files:
+
+* {blank}
++
+____
+Dockerfile
+____
+* {blank}
++
+____
+Docker-compose.yml
+____
+* {blank}
++
+____
+Index.html
+____
+
+The Setup can easily be started executing *docker-start-web.sh* file on
+the root directory.
+
+==== Prerequisites:
+
+* {blank}
++
+____
+Docker engine with docker-compose installed on the host machine.
+____
+
+==== Usage: 
+
+* {blank}
++
+____
+git clone
+https://github.com/prashanchandika/axinom-assignment.git[[.underline]#https://github.com/prashanchandika/axinom-assignment.git#]
+____
+* {blank}
++
+____
+cd axinom-assignment
+____
+* {blank}
++
+____
+chmod +x docker-*.sh
+____
+* {blank}
++
+____
+docker-start-web.sh
+____
+
+In order to shut down the Docker setup, execute the *docker-stop-web.sh*
+file on the root directory.
+
+=== Kubernetes Setup
+
+Kubernetes setup consists of 5 yml files.
+
+* {blank}
++
+____
+configmap.yml
+____
+* {blank}
++
+____
+deployment.yml
+____
+* {blank}
++
+____
+Issuer.yml
+____
+* {blank}
++
+____
+Ingress.yml
+____
+* {blank}
++
+____
+Ciservice.yml
+____
+
+The Setup can easily be started executing *kubernetes-start.sh* file on
+the root directory.
+
+Optionally the url to be used for the ingress can be changed by changing
+the value of the ‘URL’ variable on top of the kubernetes-start.sh file.
+
+==== Prerequisites and assumptions:
+
+* {blank}
++
+____
+The startup script is executed from the controller node of the
+Kubernetes cluster with kubectl installed in it.
+____
+* {blank}
++
+____
+Make sure a certificate manager that supports let’s encrypt.is installed
+and set up for Kubernetes on the cluster.
+____
+* {blank}
++
+____
+Make sure envsubst is installed on the system. (apt-get install
+gettext-base)
+____
+* {blank}
++
+____
+Executing user must have sudo access in order to create the host entry.
+____
+
+==== Usage: 
+
+* {blank}
++
+____
+git clone
+https://github.com/prashanchandika/axinom-assignment.git[[.underline]#https://github.com/prashanchandika/axinom-assignment.git#]
+____
+* {blank}
++
+____
+cd axinom-assignment
+____
+* {blank}
++
+____
+chmod +x kubernetes-*.sh
+____
+* {blank}
++
+____
+kuberenetes-start.sh
+____
+
+In order to shut down the Kubernetes setup, execute the
+*kubernete-stop.sh* file on the root directory.
